@@ -40,3 +40,7 @@ PoC (Prova de Conceito), para criação de servidor de autenticação utililizan
    ```
    artillery run -o artillery-report.json artillery.yaml
    ```
+2. Resultado 
+   ```
+   https://reportviewer.artillery.io/
+   ```

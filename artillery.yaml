@@ -1,8 +1,13 @@
 config:
   target: "https://wa-identity-sso.azurewebsites.net"
   phases:
+    - duration: 60
+      arrivalRate: 10
+      rampTo: 20
+      name: Inicialização da aplicação
     - duration: 120
-      arrivalRate: 1
+      arrivalRate: 25
+      name: Carga máxima sustentada
 scenarios:
   - flow:
       - post:
@@ -11,8 +16,8 @@ scenarios:
             content-type: "application/x-www-form-urlencoded"
           form:
             grant_type: "client_credentials"
-            scope: "openid profile"
-            client_id: "AdAzure"
-            client_secret: "769a1861-ab06-4d0b-9b78-ff69ff27f939"
+            scope: "admin_api"
+            client_id: "azure-poc-identity"
+            client_secret: "01598100745d4c7ab5ae160d824bcea1"
           expect:
             - statusCode:200
